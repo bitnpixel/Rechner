@@ -12,15 +12,11 @@ namespace Rechner
         {
             // Begrüßung des Nutzers
             Console.WriteLine("Herlich Willkommen zum Konsolen-Taschenrechner");
-            Console.WriteLine();
 
             //Abfrage der beiden Zahlen
-            Console.WriteLine("Bitte gib die erste Zahl ein");
-            string eingabeErsteZahl = Console.ReadLine();
-            Console.WriteLine();
-            Console.WriteLine("Bitte gib die zweite Zahl ein");
-            string eingabeZweiteZahl = Console.ReadLine();
-
+            string eingabeErsteZahl = EingabeZahl("Bitte gib die erste Zahl ein");
+            string eingabeZweiteZahl = EingabeZahl("Bitte gib die zweite Zahl ein");
+            
             //Text in Gleitkommazahl umwandeln
             double ersteZahl = Convert.ToDouble(eingabeErsteZahl);
             double zweiteZahl = Convert.ToDouble(eingabeZweiteZahl);
@@ -44,6 +40,14 @@ namespace Rechner
             double ergebnis = summand1 + summand2;
 
             return ergebnis;
+        }
+
+        static string EingabeZahl (string ausgabe)
+        {
+            Console.WriteLine(ausgabe);
+            string eingabe = Console.ReadLine();
+
+            return eingabe;
         }
     }
 }
